@@ -1,0 +1,28 @@
+{
+  "pages": [
+    { "path": "pages/index/index", "style": { "navigationBarTitleText": "欢喜天珠", "navigationBarBackgroundColor": "#080808", "navigationBarTextStyle": "white", "backgroundColor": "#080808" } },
+    { "path": "pages/products/index", "style": { "navigationBarTitleText": "精品展示", "navigationBarBackgroundColor": "#080808", "navigationBarTextStyle": "white", "backgroundColor": "#080808" } },
+    { "path": "pages/products/detail", "style": { "navigationBarTitleText": "商品详情", "navigationBarBackgroundColor": "#080808", "navigationBarTextStyle": "white", "backgroundColor": "#080808" } },
+    { "path": "pages/exhibition/index", "style": { "navigationBarTitleText": "展厅鉴赏", "navigationBarBackgroundColor": "#080808", "navigationBarTextStyle": "white", "backgroundColor": "#080808" } },
+    { "path": "pages/about/index", "style": { "navigationBarTitleText": "关于欢喜", "navigationBarBackgroundColor": "#080808", "navigationBarTextStyle": "white", "backgroundColor": "#080808" } },
+    { "path": "pages/order/form", "style": { "navigationBarTitleText": "下单购买", "navigationBarBackgroundColor": "#080808", "navigationBarTextStyle": "white", "backgroundColor": "#080808" } }
+  ],
+  "tabBar": {
+    "color": "#8a7a60",
+    "selectedColor": "#C9A84C",
+    "backgroundColor": "#0d0d0d",
+    "borderStyle": "black",
+    "list": [
+      { "pagePath": "pages/index/index", "text": "首页", "iconPath": "static/icons/home.png", "selectedIconPath": "static/icons/home-active.png" },
+      { "pagePath": "pages/products/index", "text": "精品", "iconPath": "static/icons/products.png", "selectedIconPath": "static/icons/products-active.png" },
+      { "pagePath": "pages/exhibition/index", "text": "展厅", "iconPath": "static/icons/exhibition.png", "selectedIconPath": "static/icons/exhibition-active.png" },
+      { "pagePath": "pages/about/index", "text": "关于", "iconPath": "static/icons/about.png", "selectedIconPath": "static/icons/about-active.png" }
+    ]
+  },
+  "globalStyle": {
+    "navigationBarTextStyle": "white",
+    "navigationBarBackgroundColor": "#080808",
+    "backgroundColor": "#080808",
+    "backgroundTextStyle": "dark"
+  }
+}

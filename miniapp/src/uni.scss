@@ -1,0 +1,91 @@
+/* 欢喜天珠 - 奢华主题样式 */
+
+$bg-primary: #080808;
+$bg-dark: #0f0f0f;
+$bg-card: #111111;
+$gold: #C9A84C;
+$gold-light: #E8C97A;
+$gold-dark: #9A7A2F;
+$text-primary: #F0EBE0;
+$text-muted: #8A7A60;
+
+page {
+  background-color: $bg-primary;
+  color: $text-primary;
+  font-family: 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.gold-text {
+  color: $gold;
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #9A7A2F, #C9A84C, #E8C97A, #C9A84C, #9A7A2F);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.gold-divider {
+  height: 1rpx;
+  background: linear-gradient(90deg, transparent, #C9A84C, #E8C97A, #C9A84C, transparent);
+}
+
+.luxury-card {
+  background: $bg-card;
+  border: 1rpx solid rgba(201, 168, 76, 0.12);
+}
+
+.btn-gold {
+  background: linear-gradient(135deg, $gold-dark, $gold, $gold-light, $gold, $gold-dark);
+  color: #080808;
+  font-weight: 600;
+  letter-spacing: 4rpx;
+  font-size: 26rpx;
+  border: none;
+  border-radius: 0;
+}
+
+.btn-ghost-gold {
+  background: transparent;
+  border: 1rpx solid rgba(201, 168, 76, 0.5);
+  color: $gold;
+  font-size: 24rpx;
+  letter-spacing: 4rpx;
+  border-radius: 0;
+}
+
+.section-title {
+  font-size: 48rpx;
+  font-weight: 300;
+  letter-spacing: 12rpx;
+  color: $text-primary;
+  text-align: center;
+}
+
+.section-subtitle {
+  font-size: 22rpx;
+  letter-spacing: 10rpx;
+  color: $text-muted;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.price-luxury {
+  font-family: 'Georgia', serif;
+  font-weight: 300;
+  color: $gold;
+}
+
+/* Loading state */
+.skeleton {
+  background: linear-gradient(90deg, $bg-card 25%, lighten($bg-card, 5%) 50%, $bg-card 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+}
+
+@keyframes skeleton-loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}

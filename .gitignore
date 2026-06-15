@@ -1,0 +1,38 @@
+# Node modules
+node_modules/
+npm-debug.log*
+
+# Build outputs
+dist/
+build/
+.output/
+
+# Database (regenerated on first run)
+server/data/*.db
+
+# Uploads (user uploaded files)
+server/uploads/*
+!server/uploads/.gitkeep
+
+# !! NEVER commit real .env to git !!
+server/.env
+.env
+.env.local
+.env.production
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Logs
+*.log
+logs/
+
+# Temp
+tmp/
+temp/

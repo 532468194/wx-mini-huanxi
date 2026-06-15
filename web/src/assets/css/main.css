@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Noto+Sans+SC:wght@300;400;500&family=Noto+Serif+SC:wght@300;400;500;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    background-color: #080808;
+    color: #F0EBE0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  ::-webkit-scrollbar-track { background: #080808; }
+  ::-webkit-scrollbar-thumb { background: #3a2e1a; border-radius: 2px; }
+  ::-webkit-scrollbar-thumb:hover { background: #C9A84C; }
+
+  ::selection {
+    background: rgba(201, 168, 76, 0.3);
+    color: #E8C97A;
+  }
+}
+
+@layer components {
+  /* Gold text gradient */
+  .text-gold-gradient {
+    background: linear-gradient(135deg, #9A7A2F, #C9A84C, #E8C97A, #C9A84C, #9A7A2F);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: goldShimmer 4s ease infinite;
+  }
+
+  /* Gold border */
+  .border-gold {
+    border: 1px solid;
+    border-image: linear-gradient(135deg, #7A5C1C, #C9A84C, #7A5C1C) 1;
+  }
+
+  /* Luxury card */
+  .luxury-card {
+    background: #111111;
+    border: 1px solid rgba(201, 168, 76, 0.1);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  .luxury-card:hover {
+    border-color: rgba(201, 168, 76, 0.35);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 40px rgba(201, 168, 76, 0.08);
+    transform: translateY(-2px);
+  }
+
+  /* Gold button */
+  .btn-gold {
+    @apply relative overflow-hidden px-8 py-3 font-serif-en tracking-widest text-sm uppercase;
+    background: linear-gradient(135deg, #7A5C1C, #C9A84C, #E8C97A, #C9A84C, #7A5C1C);
+    background-size: 200% auto;
+    color: #080808;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    border: none;
+  }
+  .btn-gold:hover {
+    background-position: right center;
+    box-shadow: 0 8px 30px rgba(201, 168, 76, 0.4);
+    transform: translateY(-1px);
+  }
+  .btn-gold:active { transform: translateY(0); }
+
+  /* Ghost gold button */
+  .btn-ghost-gold {
+    @apply relative px-8 py-3 font-serif-en tracking-widest text-sm uppercase;
+    border: 1px solid rgba(201, 168, 76, 0.5);
+    color: #C9A84C;
+    background: transparent;
+    letter-spacing: 0.15em;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  .btn-ghost-gold:hover {
+    border-color: #C9A84C;
+    background: rgba(201, 168, 76, 0.05);
+    box-shadow: 0 0 20px rgba(201, 168, 76, 0.15);
+  }
+
+  /* Gold divider */
+  .gold-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #C9A84C, #E8C97A, #C9A84C, transparent);
+  }
+
+  /* Gold dot ornament */
+  .gold-ornament::before,
+  .gold-ornament::after {
+    content: '◆';
+    color: #C9A84C;
+    font-size: 0.5em;
+    margin: 0 0.5em;
+    opacity: 0.7;
+  }
+
+  /* Section title */
+  .section-title {
+    @apply font-serif-cn text-3xl md:text-4xl font-light tracking-widest text-center;
+    color: #F0EBE0;
+  }
+  .section-subtitle {
+    @apply font-serif-en text-sm tracking-widest text-center uppercase;
+    color: #8A7A60;
+    letter-spacing: 0.3em;
+  }
+
+  /* Product price */
+  .price-luxury {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+  }
+
+  /* Image overlay effect */
+  .img-luxury-overlay {
+    position: relative;
+    overflow: hidden;
+  }
+  .img-luxury-overlay::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.7) 100%);
+    transition: opacity 0.4s ease;
+  }
+  .img-luxury-overlay:hover::after {
+    opacity: 0.5;
+  }
+  .img-luxury-overlay img {
+    transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  .img-luxury-overlay:hover img {
+    transform: scale(1.05);
+  }
+
+  /* Scroll reveal animation */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+  .reveal-delay-5 { transition-delay: 0.5s; }
+}
+
+@layer utilities {
+  .font-serif-en { font-family: 'Cormorant Garamond', 'IM Fell English', Georgia, serif; }
+  .font-serif-cn { font-family: 'Noto Serif SC', 'Source Han Serif CN', 'STSong', 'SimSun', serif; }
+  .font-sans-cn { font-family: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif; }
+
+  .bg-luxury-black { background-color: #080808; }
+  .bg-luxury-dark { background-color: #0f0f0f; }
+  .bg-luxury-card { background-color: #111111; }
+
+  .text-luxury { color: #F0EBE0; }
+  .text-luxury-muted { color: #8A7A60; }
+  .text-gold { color: #C9A84C; }
+  .text-gold-light { color: #E8C97A; }
+}
+
+/* Page transitions */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+/* Swiper custom styles */
+.swiper-pagination-bullet {
+  background: rgba(201, 168, 76, 0.4) !important;
+  opacity: 1 !important;
+  width: 6px !important;
+  height: 6px !important;
+}
+.swiper-pagination-bullet-active {
+  background: #C9A84C !important;
+  width: 24px !important;
+  border-radius: 3px !important;
+}
+
+/* Custom animations */
+@keyframes goldShimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes ripple {
+  0% { transform: scale(0); opacity: 0.4; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+
+/* Marquee container */
+.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+}
+.marquee-track {
+  display: inline-flex;
+  animation: marquee 25s linear infinite;
+}

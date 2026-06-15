@@ -1,0 +1,26 @@
+{
+  "name": "欢喜天珠",
+  "appid": "wx26951c4c1affeb2b",
+  "description": "欢喜天珠 - 正宗藏式天珠、老天铁、文玩珍品",
+  "versionName": "1.0.0",
+  "versionCode": "100",
+  "transformPx": false,
+  "mp-weixin": {
+    "appid": "wx26951c4c1affeb2b",
+    "setting": {
+      "urlCheck": false
+    },
+    "usingComponents": true,
+    "permission": {
+      "scope.userLocation": {
+        "desc": "用于展示附近展厅位置"
+      }
+    }
+  },
+  "h5": {
+    "title": "欢喜天珠",
+    "router": {
+      "mode": "history"
+    }
+  }
+}
