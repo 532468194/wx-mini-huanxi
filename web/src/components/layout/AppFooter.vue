@@ -42,7 +42,7 @@
               </div>
               <div>
                 <div class="font-sans-cn text-xs text-luxury-muted tracking-wider mb-1">电话咨询</div>
-                <a href="tel:13188888888" class="font-serif-en text-luxury-muted hover:text-gold transition-colors">13188888888</a>
+                <a href="tel:13188888888" class="font-serif-en text-luxury-muted hover:text-gold transition-colors">{{ SITE_CONFIG.phone }}</a>
               </div>
             </div>
             <div class="flex items-start gap-3">
@@ -53,7 +53,7 @@
               </div>
               <div>
                 <div class="font-sans-cn text-xs text-luxury-muted tracking-wider mb-1">微信咨询</div>
-                <span class="font-sans-cn text-luxury-muted">HUANXITIANZHU</span>
+                <span class="font-sans-cn text-luxury-muted">{{ SITE_CONFIG.wechat }}</span>
               </div>
             </div>
             <div class="flex items-start gap-3">
@@ -65,7 +65,7 @@
               </div>
               <div>
                 <div class="font-sans-cn text-xs text-luxury-muted tracking-wider mb-1">实体展厅</div>
-                <span class="font-sans-cn text-sm text-luxury-muted">亮马古玩城xxx层xxx室</span>
+                <span class="font-sans-cn text-sm text-luxury-muted">{{ SITE_CONFIG.address }}</span>
               </div>
             </div>
           </div>
@@ -88,6 +88,7 @@
 </template>
 
 <script setup lang="ts">
+import { SITE_CONFIG } from '@/config'
 const navItems = [
   { label: '首页', path: '/' },
   { label: '精品展示', path: '/products' },

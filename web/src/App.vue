@@ -9,9 +9,7 @@
       </RouterView>
     </main>
     <AppFooter />
-    <div v-if="cartStore.showCart" class="fixed inset-0 z-50">
-      <CartDrawer @close="cartStore.showCart = false" />
-    </div>
+    <CartDrawer :show="cartStore.showCart" @close="cartStore.showCart = false" />
   </div>
 </template>
 

@@ -23,7 +23,7 @@
       </view>
       <view class="form-item">
         <text class="form-label">手机号 *</text>
-        <input v-model="form.customer_phone" type="number" placeholder="必填" class="form-input" />
+        <input v-model="form.customer_phone" type="tel" placeholder="必填" class="form-input" />
       </view>
       <view class="form-item">
         <text class="form-label">微信号</text>

@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { ref, computed } from 'vue'
+import { ref, computed, watch } from 'vue'
 import type { Product } from '@/api'
 
 export interface CartItem {
@@ -7,9 +7,26 @@ export interface CartItem {
   quantity: number
 }
 
+const CART_KEY = 'hx_cart'
+
 export const useCartStore = defineStore('cart', () => {
-  const items = ref<CartItem[]>([])
+  // Load persisted cart from localStorage
+  function loadCart(): CartItem[] {
+    try {
+      const raw = localStorage.getItem(CART_KEY)
+      return raw ? JSON.parse(raw) : []
+    } catch {
+      return []
+    }
+  }
+
+  const items = ref<CartItem[]>(loadCart())
   const showCart = ref(false)
+
+  // Persist to localStorage on every change
+  watch(items, (val) => {
+    localStorage.setItem(CART_KEY, JSON.stringify(val))
+  }, { deep: true })
 
   const total = computed(() => items.value.reduce((sum, item) => {
     return sum + (item.product.price || 0) * item.quantity
@@ -18,6 +35,7 @@ export const useCartStore = defineStore('cart', () => {
   const count = computed(() => items.value.reduce((sum, i) => sum + i.quantity, 0))
 
   function add(product: Product, quantity = 1) {
+    if (product.is_inquiry_only) return // 询价商品不加购物车
     const existing = items.value.find(i => i.product.id === product.id)
     if (existing) {
       existing.quantity += quantity

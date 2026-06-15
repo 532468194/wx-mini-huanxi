@@ -80,9 +80,9 @@ router.get('/traffic', authMiddleware, (req, res) => {
 
   const pages = getDb().prepare(`
     SELECT page, COUNT(*) as views
-    FROM analytics WHERE event_type='page_view' AND created_at >= datetime('now', '-${parseInt(days)} days')
+    FROM analytics WHERE event_type='page_view' AND date(created_at) >= ?
     GROUP BY page ORDER BY views DESC LIMIT 10
-  `).all();
+  `).all(daysAgo);
 
   res.json({ daily, pages });
 });

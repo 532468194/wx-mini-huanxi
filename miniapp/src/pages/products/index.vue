@@ -25,7 +25,12 @@
         @tap="goProduct(product.id)"
       >
         <view class="img-wrap">
-          <image :src="imgUrl(product.images[0])" mode="aspectFill" class="product-img" />
+          <image
+            :src="imgUrl(product.images[0])"
+            mode="aspectFill"
+            class="product-img"
+            @error="(e) => e.target && (e.target.src = '/static/placeholder.png')"
+          />
           <view v-if="product.is_inquiry_only" class="badge-inquiry">面议</view>
         </view>
         <view class="product-info">
@@ -74,6 +79,7 @@ export default {
     formatPrice(p) { return p?.toLocaleString('zh-CN') || '' },
     goProduct(id) { uni.navigateTo({ url: `/pages/products/detail?id=${id}` }) },
     async setCategory(slug) {
+      if (this.activeCategory === slug || this.loading) return // 防重复点击
       this.activeCategory = slug
       this.page = 1
       this.products = []
