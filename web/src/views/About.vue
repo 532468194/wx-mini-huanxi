@@ -10,7 +10,7 @@
     <section class="py-24 px-6 lg:px-12 max-w-5xl mx-auto">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div class="reveal">
-          <img src="/static/展厅/品牌主理人照片.jpg" alt="品牌主理人" class="w-full aspect-square object-cover" />
+          <img :src="'/static/' + encodeURIComponent('展厅') + '/' + encodeURIComponent('品牌主理人照片.jpg')" alt="品牌主理人" class="w-full aspect-square object-cover" />
         </div>
         <div>
           <p class="font-serif-en text-xs tracking-[0.4em] text-gold/60 uppercase mb-6 reveal">Brand Story</p>

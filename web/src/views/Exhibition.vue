@@ -9,7 +9,7 @@
 
     <!-- Main feature image -->
     <div class="relative h-[60vh] overflow-hidden">
-      <img src="/static/展厅/品牌主理人照片.jpg" alt="品牌主理人与展厅" class="w-full h-full object-cover" />
+      <img :src="imgSrc('/static/展厅/品牌主理人照片.jpg')" alt="品牌主理人与展厅" class="w-full h-full object-cover" />
       <div class="absolute inset-0 bg-gradient-to-t from-luxury-black/80 via-transparent to-luxury-black/20"></div>
       <div class="absolute bottom-10 left-1/2 -translate-x-1/2 text-center">
         <p class="font-serif-cn text-xl tracking-widest text-luxury mb-2">品牌主理人</p>
