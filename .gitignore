@@ -7,6 +7,9 @@ dist/
 build/
 .output/
 
+# Vercel build: images copied here temporarily during build
+web/public/static/
+
 # Database (regenerated on first run)
 server/data/*.db
 

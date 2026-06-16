@@ -1,6 +1,6 @@
 {
   "installCommand": "cd web && npm install",
-  "buildCommand": "cd web && npm run build",
+  "buildCommand": "mkdir -p web/public && cp -r picture/huanxitianzhu/huanxitianzhu web/public/static && cd web && npm run build",
   "outputDirectory": "web/dist",
   "rewrites": [
     {
